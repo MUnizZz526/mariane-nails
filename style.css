@@ -1,15 +1,49 @@
+/* ==========================================
+   MARIANE NAILS STUDIO
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --rosa:#d63384;
+    --rosa-claro:#ffe7f1;
+    --rosa-hover:#c22572;
+    --branco:#ffffff;
+    --cinza:#666;
+    --cinza-claro:#f8f8f8;
+
+    --sombra:0 15px 35px rgba(214,51,132,.12);
+
+}
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
 }
 
 
-body{
-
-    background:linear-gradient(180deg,#ffd6e8,#fff);
+ body{
 
     font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #fff8fb 0%,
+        #ffeef5 50%,
+        #ffffff 100%
+    );
+
+    min-height:100vh;
 
     display:flex;
 
@@ -17,113 +51,177 @@ body{
 
     align-items:center;
 
-    min-height:100vh;
+    overflow-x:hidden;
+
+    color:#444;
 
 }
 
+/* Fundo */
 
+body::before{
 
-/* CONTAINER */
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+    height:600px;
+
+    background:#ffd7ea;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    top:-250px;
+    left:-250px;
+
+    opacity:.55;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#ffe5f0;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    bottom:-200px;
+    right:-200px;
+
+    opacity:.7;
+
+    z-index:-2;
+
+}
+
+/* Container */
 
 .container{
 
-    width:360px;
+    width:390px;
 
-    max-width:90%;
+    max-width:92%;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    padding:35px;
 
     text-align:center;
 
-    padding:20px 0;
+    box-shadow:var(--sombra);
+
+    animation:fade 1s ease;
 
 }
 
-
-
-/* FOTO PERFIL */
+/* Foto */
 
 .foto{
 
-    width:140px;
-
-    height:140px;
+    width:150px;
+    height:150px;
 
     border-radius:50%;
 
     object-fit:cover;
 
-    border:5px solid white;
+    border:6px solid white;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    box-shadow:
+
+        0 10px 25px rgba(214,51,132,.18);
 
     margin-bottom:20px;
 
+    animation:flutuar 5s ease-in-out infinite;
+
 }
 
-
-
-/* TITULOS */
+/* Nome */
 
 h1{
 
-    color:#d63384;
+    color:var(--rosa);
+
+    font-size:30px;
+
+    font-weight:700;
 
     margin-bottom:10px;
 
-    font-size:28px;
-
 }
 
-
-
-h2{
-
-    color:#d63384;
-
-}
-
-
-
-p{
-
-    color:#555;
-
-    margin-bottom:30px;
-
-}
-
-
+/* Texto */
 
 .descricao{
 
-    line-height:1.6;
+    color:#444;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    font-weight:400;
+
+    letter-spacing:.3px;
+
+    margin-bottom:30px;
+
+    font-family:'Montserrat',sans-serif;
 
 }
-
-
-
-/* BOTÕES */
+/* Botões */
 
 .botao{
 
-    display:block;
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
 
     text-decoration:none;
 
-    background:white;
+    color:#444;
 
-    color:#333;
+     background:white;
 
-    padding:18px;
+     padding:18px;
 
-    margin-bottom:15px;
+    margin-bottom:16px;
 
     border-radius:18px;
 
     font-weight:600;
 
-    transition:.3s;
+    box-shadow:
 
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+        0 8px 20px rgba(0,0,0,.08);
+
+    transition:.35s;
 
 }
 
@@ -131,7 +229,9 @@ p{
 
 .botao i{
 
-    margin-right:8px;
+    font-size:20px;
+
+    transition:.35s;
 
 }
 
@@ -139,17 +239,53 @@ p{
 
 .botao:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 
-    background:#d63384;
+    color:var(--rosa);
 
-    color:white;
+    box-shadow:
+
+        0 15px 35px rgba(214,51,132,.18);
 
 }
 
+.botao:hover i{
 
+    transform:rotate(-8deg) scale(1.15);
 
-/* WHATSAPP */
+}
+
+/* brilho */
+
+.botao::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.55);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.botao:hover::before{
+
+    left:150%;
+
+}
+
+/* WhatsApp */
 
 .whatsapp{
 
@@ -158,106 +294,106 @@ p{
     color:white;
 
 }
+.whatsapp:hover{
 
+    background:#22c35e;
 
-
-/* ========================= */
-/* TABELA DE VALORES */
-/* ========================= */
-
-
-.tabela{
-
-    width:100%;
+    color:white;
 
 }
 
+/* Footer */
 
+footer{
 
-.card-valor{
+    margin-top:25px;
 
-    background:white;
+}
+footer p{
 
-    padding:25px;
+    color:#999;
 
-    border-radius:22px;
-
-    margin-bottom:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    text-align:left;
+    font-size:13px;
 
 }
 
+/* Animações */
 
+@keyframes fade{
 
-.card-valor h2{
+    from{
 
-    font-size:20px;
+        opacity:0;
 
-    text-align:center;
+        transform:translateY(25px);
 
-    margin-bottom:20px;
+    }
 
-}
+    to{
 
+        opacity:1;
 
+        transform:translateY(0);
 
-.servico{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:14px 0;
-
-    border-bottom:1px solid #f1f1f1;
-
-    color:#555;
+    }
 
 }
 
+@keyframes flutuar{
 
+    0%{
 
-.servico:last-child{
+        transform:translateY(0);
 
-    border-bottom:none;
+    }
 
-}
+    50%{
 
+        transform:translateY(-8px);
 
+    }
 
-.servico strong{
+    100%{
 
-    color:#d63384;
+        transform:translateY(0);
 
-    font-size:17px;
-
-}
-
-
-
-.destaque{
-
-    background:#ffe6f1;
-
-    padding:15px;
-
-    border-radius:12px;
-
-    margin-top:10px;
+    }
 
 }
 
+/* Celular */
 
+@media(max-width:480px){
 
-/* ========================= */
-/* GALERIA */
-/* ========================= */
+    .container{
 
+        padding:28px 22px;
+
+    }
+
+    .foto{
+
+        width:130px;
+        height:130px;
+
+    }
+     
+    h1{
+
+        font-family:'Playfair Display',serif;
+
+        color:#d63384;
+
+        font-size:32px;
+
+        margin-bottom:10px;
+
+    }
+
+}
+/* ==========================================
+   GALERIA
+========================================== */
 
 .galeria{
 
@@ -267,10 +403,9 @@ p{
 
     gap:15px;
 
-    margin-bottom:25px;
+    margin:25px 0;
 
 }
-
 
 
 .galeria img{
@@ -281,81 +416,431 @@ p{
 
     object-fit:cover;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    cursor:pointer;
 
-    transition:.3s;
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.10);
+
+    transition:.4s;
 
 }
-
 
 
 .galeria img:hover{
 
     transform:scale(1.05);
 
-}
+    box-shadow:
 
-
-
-/* AVISO */
-
-.aviso{
-
-    font-size:14px;
-
-    color:#777;
-
-    margin-top:20px;
+    0 15px 35px rgba(214,51,132,.25);
 
 }
 
 
 
-/* RODAPÉ */
+/* ==========================================
+   LIGHTBOX (IMAGEM GRANDE)
+========================================== */
 
-footer p{
 
-    font-size:13px;
+.lightbox{
 
-    color:#888;
+    position:fixed;
 
-    margin-top:25px;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:999;
 
 }
 
 
+.lightbox.active{
 
-/* RESPONSIVO */
+    opacity:1;
 
-@media(max-width:400px){
+    visibility:visible;
 
-    .container{
+}
 
-        width:90%;
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:80%;
+
+    border-radius:25px;
+
+    animation:zoom .4s ease;
+
+}
+
+
+@keyframes zoom{
+
+    from{
+
+        transform:scale(.7);
 
     }
 
 
-    h1{
+    to{
 
-        font-size:24px;
+        transform:scale(1);
 
     }
 
+}
+/* ==========================
+   NOVA TABELA DE VALORES
+========================== */
 
-    .botao{
 
-        padding:16px;
+.precos{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+.preco-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:28px;
+
+    box-shadow:0 12px 30px rgba(214,51,132,.12);
+
+    transition:.35s;
+
+}
+
+
+.preco-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.icone{
+
+    font-size:35px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.preco-card h2{
+
+    color:#d63384;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.linha{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #eee;
+
+    color:#666;
+
+}
+
+
+
+.linha strong{
+
+    color:#d63384;
+
+    font-size:18px;
+
+}
+
+
+
+.destaque-preco{
+
+    background:#fff0f6;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    border:none;
+
+    margin-top:10px;
+
+}
+
+
+
+.destaque-preco strong{
+
+    font-size:22px;
+
+}
+
+
+
+
+/* ==========================================
+   BOTÃO VOLTAR
+========================================== */
+
+
+.voltar{
+
+    background:#fff0f6;
+
+    color:var(--rosa);
+
+}
+
+
+
+/* ==========================================
+   ANIMAÇÃO DOS ELEMENTOS
+========================================== */
+
+
+.animar{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:subir .8s forwards;
+
+}
+
+
+
+@keyframes subir{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVO EXTRA
+========================================== */
+
+
+@media(max-width:480px){
+
+
+    .galeria{
+
+        gap:10px;
 
     }
 
 
     .galeria img{
 
-        height:150px;
+        height:140px;
 
     }
+
+
+    .card-valor{
+
+        padding:20px;
+
+    }
+
+
+    .servico{
+
+        font-size:14px;
+
+    }
+
+
+}
+/* ==========================
+   TOPO PREMIUM
+========================== */
+
+
+.foto-area{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.foto-area::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:165px;
+
+    height:165px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #ffd6e8,
+        #ffffff
+    );
+
+    z-index:-1;
+
+    animation:brilhoFoto 4s infinite;
+
+}
+
+
+
+.foto{
+
+    position:relative;
+
+}
+.subtitulo{
+
+    color:#555;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+    font-weight:500;
+
+    letter-spacing:.2px;
+
+}
+
+
+.servicos{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:#fff0f6;
+
+    color:#d63384;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:35px;
+
+}
+
+
+
+@keyframes brilhoFoto{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.7;
+
+    }
+
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:.7;
+
+    }
+
+}
+.servicos{
+
+    display:inline-block;
+
+    background:#fff0f6;
+
+    color:#d63384;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    font-weight:600;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 20px rgba(214,51,132,.10);
 
 }

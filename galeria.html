@@ -3,25 +3,24 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Galeria | Mariane Nails Studio 💅</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Veja alguns trabalhos da Mariane Nails Studio.">
+<title>Galeria | Mariane Nails ✨</title>
 
-    <link rel="stylesheet" href="style.css">
-
-
-    <!-- Fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
 </head>
@@ -30,75 +29,149 @@
 <body>
 
 
+
 <div class="container">
 
 
-    <img src="img/perfil.jpeg" alt="Mariane Nails Studio" class="foto">
 
+<h1>
 
-    <h1>Galeria 💅</h1>
+Galeria de Trabalhos 💅
 
-
-    <p class="descricao">
-
-        Confira alguns dos meus trabalhos feitos com carinho 💖
-
-    </p>
+</h1>
 
 
 
-    <div class="galeria">
+<p class="descricao">
 
+Confira alguns trabalhos realizados ✨
 
-        <img src="img/unha1.jpeg" alt="Esmaltação feita pela Mariane Nails">
-
-        <img src="img/unha2.jpeg" alt="Esmaltação feita pela Mariane Nails">
-
-        <img src="img/unha3.jpeg" alt="Esmaltação feita pela Mariane Nails">
-
-        <img src="img/unha4.jpeg" alt="Esmaltação feita pela Mariane Nails">
-
-
-    </div>
+</p>
 
 
 
-    <a 
-    href="https://wa.me/5511970684683?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20com%20você.%20😊"
-    class="botao whatsapp"
-    target="_blank">
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-        Agendar horário
-
-    </a>
 
 
-
-    <a 
-    href="index.html"
-    class="botao">
-
-        <i class="fa-solid fa-arrow-left"></i>
-
-        Voltar
-
-    </a>
+<div class="galeria">
 
 
+<img src="img/unha1.jpeg" alt="Unha decorada 1">
 
-    <footer>
 
-        <p>
-            © 2026 Mariane Nails Studio 💖
-        </p>
+<img src="img/unha2.jpeg" alt="Unha decorada 2">
 
-    </footer>
+
+<img src="img/unha3.jpeg" alt="Unha decorada 3">
+
+
+<img src="img/unha4.jpeg" alt="Unha decorada 4">
+
 
 
 </div>
 
+
+
+
+
+<a href="index.html" class="botao voltar">
+
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Voltar
+
+
+</a>
+
+
+
+
+
+
+<footer>
+
+<p>
+
+Mariane Nails Studio 💖
+
+</p>
+
+</footer>
+
+
+
+
+</div>
+
+
+
+
+
+
+<!-- Lightbox -->
+
+
+<div class="lightbox">
+
+
+<img src="" alt="Imagem ampliada">
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+const imagens = document.querySelectorAll(".galeria img");
+
+const lightbox = document.querySelector(".lightbox");
+
+const imagemGrande = document.querySelector(".lightbox img");
+
+
+
+imagens.forEach(imagem => {
+
+
+    imagem.addEventListener("click",()=>{
+
+
+        lightbox.classList.add("active");
+
+
+        imagemGrande.src = imagem.src;
+
+
+    });
+
+
+
+});
+
+
+
+
+
+lightbox.addEventListener("click",()=>{
+
+
+    lightbox.classList.remove("active");
+
+
+});
+
+
+
+</script>
+
+
+<script src="script.js"></script>
 
 </body>
 
