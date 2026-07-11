@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+
+    background: #f8f5f7;
+    color: #333;
+
+}
+
+
+
+.dashboard {
+
+    display: flex;
+    min-height: 100vh;
+
+}
+
+
+
+/* MENU LATERAL */
+
+.sidebar {
+
+    width: 260px;
+    background: white;
+    padding: 30px 20px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.05);
+
+}
+
+
+
+.sidebar h2 {
+
+    margin-bottom: 40px;
+    font-size: 22px;
+
+}
+
+
+
+.sidebar nav {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+
+
+.sidebar a {
+
+    text-decoration: none;
+    color: #555;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+
+
+.sidebar a:hover,
+.sidebar .ativo {
+
+    background: #f3d7e5;
+    color: #b44b7b;
+
+}
+
+
+
+
+
+/* CONTEÚDO */
+
+
+.conteudo {
+
+    flex: 1;
+    padding: 40px;
+
+}
+
+
+
+header h1 {
+
+    font-size: 32px;
+
+}
+
+
+
+header p {
+
+    color: #777;
+    margin-top: 5px;
+
+}
+
+
+
+
+
+
+/* CARDS */
+
+
+.cards {
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: 35px 0;
+
+}
+
+
+
+.card {
+
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+}
+
+
+
+.card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+
+
+/* PAINEL */
+
+
+.painel {
+
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+}
+
+
+
+.painel h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+label {
+
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+
+}
+
+
+
+input,
+textarea {
+
+
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    outline: none;
+
+}
+
+
+
+textarea {
+
+    min-height: 120px;
+    resize: none;
+
+}
+
+
+
+button {
+
+
+    background: #c86b99;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s;
+
+}
+
+
+
+button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+
+
+
+.voltar {
+
+
+    display: inline-block;
+    margin-top: 20px;
+    color: #b44b7b;
+    text-decoration: none;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+    .dashboard{
+
+        flex-direction: column;
+
+    }
+
+
+    .sidebar{
+
+        width:100%;
+
+    }
+
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+.pagina{
+
+    display:block;
+
+}
+
+.escondido{
+
+    display:none;
+
+}

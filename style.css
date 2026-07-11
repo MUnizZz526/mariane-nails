@@ -750,7 +750,20 @@ footer p{
 
 .foto{
 
-    position:relative;
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    margin-bottom:20px;
+
 
 }
 .subtitulo{
@@ -843,4 +856,13 @@ footer p{
 
     box-shadow:0 8px 20px rgba(214,51,132,.10);
 
+}
+.foto {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    margin-bottom: 20px;
 }

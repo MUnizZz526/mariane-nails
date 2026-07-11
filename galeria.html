@@ -30,13 +30,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-<div class="container">
+
+    <div class="container">
 
 
 
 <h1>
 
-Galeria de Trabalhos 💅
+    Galeria de Trabalhos 💅
 
 </h1>
 
@@ -44,7 +45,7 @@ Galeria de Trabalhos 💅
 
 <p class="descricao">
 
-Confira alguns trabalhos realizados ✨
+    Confira alguns trabalhos realizados ✨
 
 </p>
 
@@ -54,19 +55,7 @@ Confira alguns trabalhos realizados ✨
 
 <div class="galeria">
 
-
-<img src="img/unha1.jpeg" alt="Unha decorada 1">
-
-
-<img src="img/unha2.jpeg" alt="Unha decorada 2">
-
-
-<img src="img/unha3.jpeg" alt="Unha decorada 3">
-
-
-<img src="img/unha4.jpeg" alt="Unha decorada 4">
-
-
+<!-- As fotos serão carregadas pelo Supabase -->
 
 </div>
 
@@ -124,55 +113,16 @@ Mariane Nails Studio 💖
 
 
 
+<!-- Supabase -->
 
-<script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script src="supabase.js"></script>
 
-const imagens = document.querySelectorAll(".galeria img");
+<script src="galeria.js"></script>
 
-const lightbox = document.querySelector(".lightbox");
-
-const imagemGrande = document.querySelector(".lightbox img");
-
-
-
-imagens.forEach(imagem => {
-
-
-    imagem.addEventListener("click",()=>{
-
-
-        lightbox.classList.add("active");
-
-
-        imagemGrande.src = imagem.src;
-
-
-    });
-
-
-
-});
-
-
-
-
-
-lightbox.addEventListener("click",()=>{
-
-
-    lightbox.classList.remove("active");
-
-
-});
-
-
-
-</script>
-
-
-<script src="script.js"></script>
 
 </body>
+
 
 </html>

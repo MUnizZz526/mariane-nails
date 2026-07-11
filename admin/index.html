@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Painel | Mariane Nails</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- MENU -->
+
+    <aside class="sidebar">
+
+        <h2>💅 Mariane Nails</h2>
+
+        <nav>
+
+            <a
+                id="menuDashboard"
+                class="ativo"
+            >
+                🏠 Dashboard
+            </a>
+
+            <a id="menuPerfil">
+                👤 Perfil
+            </a>
+
+            <a id="menuGaleria">
+                🖼️ Galeria
+            </a>
+
+            <a id="menuServicos">
+                💅 Serviços
+            </a>
+
+            <a id="menuRedes">
+                📱 Redes Sociais
+            </a>
+
+            <a id="logout">
+                🚪 Sair
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+        <!-- DASHBOARD -->
+
+        <section
+            id="dashboard"
+            class="pagina"
+        >
+
+            <h1>Dashboard</h1>
+
+            <p>
+                Bem-vinda ao painel da Mariane Nails Studio 💖
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>
+                        👤 Perfil
+                    </h3>
+
+                    <p>
+                        Atualize nome, descrição e foto.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+                        🖼️ Galeria
+                    </h3>
+
+                    <p>
+                        Gerencie as fotos dos trabalhos.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+                        💅 Serviços
+                    </h3>
+
+                    <p>
+                        Atualize preços e serviços.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PERFIL -->
+
+        <section
+            id="perfil"
+            class="pagina escondido"
+        >
+
+            <div class="painel">
+
+                <h2>
+                    Editar Perfil
+                </h2>
+
+                <label for="nome">
+                    Nome
+                </label>
+
+                <input
+                    id="nome"
+                    type="text"
+                >
+
+                <label for="descricao">
+                    Descrição
+                </label>
+
+                <textarea id="descricao"></textarea>
+
+                <button id="salvarPerfil">
+                    Salvar Alterações
+                </button>
+
+            </div>
+
+            <div class="painel">
+
+                <h2>
+                    Foto de Perfil
+                </h2>
+
+                <div class="fotoPerfil">
+
+                    <img
+                        id="previewFoto"
+                        src=""
+                        alt="Foto de Perfil"
+                    >
+
+                </div>
+
+                <input
+                    id="foto"
+                    type="file"
+                    accept="image/*"
+                >
+
+                <button id="salvarFoto">
+                    Atualizar Foto
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- GALERIA -->
+
+        <section
+            id="galeria"
+            class="pagina escondido"
+        >
+
+            <div class="painel">
+
+                <h2>
+                    Adicionar à galeria
+                </h2>
+
+                <p>
+                    Escolha entre uma foto de trabalho ou um comparativo de antes e depois.
+                </p>
+
+                <label for="tipoGaleria">
+                    Tipo de publicação
+                </label>
+
+                <select id="tipoGaleria">
+
+                    <option value="trabalho">
+                        Trabalho
+                    </option>
+
+                    <option value="antes_depois">
+                        Antes e Depois
+                    </option>
+
+                </select>
+
+                <label for="tituloGaleria">
+                    Título
+                </label>
+
+                <input
+                    id="tituloGaleria"
+                    type="text"
+                    placeholder="Ex: Alongamento em gel"
+                >
+
+                <!-- FOTO DE TRABALHO -->
+
+                <div id="campoTrabalho">
+
+                    <label for="fotoTrabalho">
+                        Foto do trabalho
+                    </label>
+
+                    <input
+                        id="fotoTrabalho"
+                        type="file"
+                        accept="image/*"
+                    >
+
+                    <div
+                        id="previewTrabalhoContainer"
+                        class="previewGaleria escondido"
+                    >
+
+                        <img
+                            id="previewTrabalho"
+                            src=""
+                            alt="Prévia do trabalho"
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- ANTES E DEPOIS -->
+
+                <div
+                    id="campoAntesDepois"
+                    class="escondido"
+                >
+
+                    <div class="camposAntesDepois">
+
+                        <div>
+
+                            <label for="fotoAntes">
+                                Foto do antes
+                            </label>
+
+                            <input
+                                id="fotoAntes"
+                                type="file"
+                                accept="image/*"
+                            >
+
+                            <div
+                                id="previewAntesContainer"
+                                class="previewGaleria escondido"
+                            >
+
+                                <img
+                                    id="previewAntes"
+                                    src=""
+                                    alt="Prévia da foto antes"
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <label for="fotoDepois">
+                                Foto do depois
+                            </label>
+
+                            <input
+                                id="fotoDepois"
+                                type="file"
+                                accept="image/*"
+                            >
+
+                            <div
+                                id="previewDepoisContainer"
+                                class="previewGaleria escondido"
+                            >
+
+                                <img
+                                    id="previewDepois"
+                                    src=""
+                                    alt="Prévia da foto depois"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button id="salvarGaleria">
+                    Adicionar à Galeria
+                </button>
+
+                <p
+                    id="mensagemGaleria"
+                    class="mensagemGaleria"
+                ></p>
+
+            </div>
+
+            <div class="painel">
+
+                <div class="cabecalhoGaleria">
+
+                    <div>
+
+                        <h2>
+                            Fotos cadastradas
+                        </h2>
+
+                        <p>
+                            Visualize e remova os trabalhos publicados.
+                        </p>
+
+                    </div>
+
+                    <button
+                        id="atualizarGaleria"
+                        type="button"
+                        class="botaoSecundario"
+                    >
+                        ↻ Atualizar
+                    </button>
+
+                </div>
+
+                <div id="listaGaleria">
+
+                    <p>
+                        Carregando galeria...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SERVIÇOS -->
+
+        <section
+            id="servicos"
+            class="pagina escondido"
+        >
+
+            <div class="painel">
+
+                <h2>
+                    Serviços
+                </h2>
+
+                <p>
+                    Em breve você poderá cadastrar e editar todos os serviços.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- REDES -->
+
+        <section
+            id="redes"
+            class="pagina escondido"
+        >
+
+            <div class="painel">
+
+                <h2>
+                    Redes Sociais
+                </h2>
+
+                <label for="whatsapp">
+                    WhatsApp
+                </label>
+
+                <input
+                    id="whatsapp"
+                    type="text"
+                    placeholder="5511999999999"
+                >
+
+                <label for="instagram">
+                    Instagram
+                </label>
+
+                <input
+                    id="instagram"
+                    type="text"
+                    placeholder="@marianenails"
+                >
+
+                <label for="endereco">
+                    Endereço
+                </label>
+
+                <input
+                    id="endereco"
+                    type="text"
+                    placeholder="Rua..."
+                >
+
+                <button id="salvarRedes">
+                    Salvar Redes
+                </button>
+
+            </div>
+
+        </section>
+
+        <a
+            href="../index.html"
+            class="voltar"
+        >
+            ← Voltar para o site
+        </a>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../supabase.js"></script>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
