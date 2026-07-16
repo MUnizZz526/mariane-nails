@@ -1,0 +1,175 @@
+/* =========================================
+   COMPONENTES GLOBAIS
+========================================= */
+
+/* Container */
+
+.container{
+
+    width:min(100%, var(--container));
+
+    margin:auto;
+
+}
+
+/* Títulos */
+
+.section-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:var(--surface-alt);
+
+    color:var(--primary);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.section-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(34px,5vw,54px);
+
+    color:var(--text);
+
+    line-height:1.15;
+
+    margin-bottom:18px;
+
+}
+
+.section-description{
+
+    max-width:650px;
+
+    color:var(--text-light);
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+/* Botões */
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 28px;
+
+    border-radius:16px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* Botão principal */
+
+.button-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.button-primary:hover{
+
+    background:var(--primary-hover);
+
+}
+
+/* Botão WhatsApp */
+
+.button-whatsapp{
+
+    background:var(--whatsapp);
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(37,211,102,.28);
+
+}
+
+.button-whatsapp:hover{
+
+    background:var(--whatsapp-hover);
+
+}
+
+/* Botão secundário */
+
+.button-secondary{
+
+    background:white;
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+}
+
+.button-secondary:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+/* Cards */
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow);
+
+}

@@ -1,0 +1,99 @@
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.rodapeSite {
+    width: 100%;
+
+    margin-top: 80px;
+    padding: 64px 24px 28px;
+
+    border-top: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.75),
+            #ffffff
+        );
+}
+
+.rodapeSite > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    width: min(100%, var(--container));
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.rodapeSite > div:first-child strong {
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.rodapeSite > div:first-child span {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+.rodapeLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    width: min(100%, var(--container));
+
+    margin: 30px auto;
+}
+
+.rodapeLinks a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 10px 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background: var(--surface);
+    color: var(--text-light);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.rodapeLinks a:hover {
+    border-color: var(--primary);
+    background: var(--surface-alt);
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+.rodapeSite > p {
+    width: min(100%, var(--container));
+
+    margin: 0 auto;
+    padding-top: 23px;
+
+    border-top: 1px solid var(--border);
+
+    color: #9b9096;
+
+    font-size: 11px;
+    text-align: center;
+}

@@ -1,0 +1,190 @@
+/* =========================================
+   CONTATO E AGENDAMENTO
+========================================= */
+
+.secaoContato {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    align-items: center;
+    gap: 70px;
+
+    width: min(calc(100% - 48px), var(--container));
+
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.contatoConteudo {
+    max-width: 650px;
+}
+
+.etiquetaContato {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+    padding: 8px 15px;
+
+    border-radius: 999px;
+
+    background: var(--surface-alt);
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.contatoConteudo h2 {
+    max-width: 620px;
+
+    margin-bottom: 18px;
+
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.contatoConteudo p {
+    max-width: 560px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.botaoContato {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 54px;
+
+    margin-top: 30px;
+    padding: 15px 25px;
+
+    border-radius: 16px;
+
+    background: var(--whatsapp);
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 15px 35px rgba(37, 211, 102, 0.24);
+
+    transition: var(--transition);
+}
+
+.botaoContato:hover {
+    background: var(--whatsapp-hover);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 42px rgba(37, 211, 102, 0.3);
+}
+
+
+/* =========================================
+   LINKS DE CONTATO
+========================================= */
+
+.contatoInformacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.itemContato {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 20px;
+    align-items: center;
+    gap: 15px;
+
+    min-height: 92px;
+    padding: 19px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+    color: var(--text);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+.itemContato:hover {
+    border-color: var(--primary);
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+.itemContato > i:first-child {
+    display: grid;
+    place-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 15px;
+
+    background: var(--surface-alt);
+    color: var(--primary);
+
+    font-size: 18px;
+}
+
+.itemContato div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.itemContato span {
+    color: var(--text-light);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.itemContato strong {
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.itemContato > i:last-child {
+    color: #c8a7b7;
+
+    font-size: 13px;
+
+    transition: var(--transition);
+}
+
+.itemContato:hover > i:last-child {
+    color: var(--primary);
+
+    transform: translateX(3px);
+}

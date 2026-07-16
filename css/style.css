@@ -1,0 +1,14 @@
+@import "variables.css";
+@import "base.css";
+@import "components.css";
+
+@import "header.css";
+@import "hero.css";
+@import "portfolio.css";
+@import "services.css";
+@import "contact.css";
+@import "footer.css";
+
+@import "responsive.css";
+@import "prices.css";
+@import "gallery.css";

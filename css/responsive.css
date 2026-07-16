@@ -1,0 +1,270 @@
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 980px) {
+
+    .site-header,
+    .cabecalhoSite {
+        width: calc(100% - 32px);
+    }
+
+    .site-nav,
+    .menuSite {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 42px;
+
+        min-height: auto;
+        padding: 65px 0 80px;
+    }
+
+    .heroConteudo {
+        max-width: 760px;
+    }
+
+    .heroImagem {
+        justify-content: center;
+    }
+
+    .molduraFoto {
+        width: min(100%, 380px);
+    }
+
+    .gradeTrabalhosRecentes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cardsAtalhos {
+        grid-template-columns: 1fr;
+    }
+
+    .listaServicos {
+        grid-template-columns: 1fr;
+    }
+
+    .secaoContato {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .contatoConteudo {
+        max-width: 700px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .paginaValores {
+    width: calc(100% - 28px);
+    padding: 65px 0;
+    }
+
+    .gradePrecos {
+    grid-template-columns: 1fr;
+    }
+
+    .valoresCTA {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px;
+    }
+
+    .valoresCTA .button {
+    width: 100%;
+    }
+
+    section {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .site-header,
+    .cabecalhoSite {
+        width: calc(100% - 24px);
+        margin-top: 12px;
+        padding: 14px 16px;
+        border-radius: 18px;
+    }
+
+    .site-brand strong,
+    .marcaNome {
+        font-size: 19px;
+    }
+
+    .site-brand span,
+    .marcaStudio {
+        font-size: 10px;
+        letter-spacing: 2.2px;
+    }
+
+    .header-cta,
+    .botaoCabecalho {
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+
+    .hero {
+        width: calc(100% - 28px);
+        padding: 48px 0 68px;
+    }
+
+    .heroConteudo h1 {
+        font-size: clamp(42px, 13vw, 58px);
+        letter-spacing: -1px;
+    }
+
+    .heroDescricao {
+        font-size: 15px;
+    }
+
+    .heroAcoes {
+        flex-direction: column;
+    }
+
+    .heroAcoes .button,
+    .heroAcoes .botaoPrincipal,
+    .heroAcoes .botaoSecundarioSite {
+        width: 100%;
+    }
+
+    .molduraFoto {
+        width: min(100%, 330px);
+        border-width: 7px;
+        border-radius: 42% 42% 20px 20px;
+    }
+
+    .site-section,
+    .secaoSite,
+    #servicos,
+    .secaoContato,
+    .cardsAtalhos,
+    .quick-links {
+        width: calc(100% - 28px);
+    }
+
+    .site-section,
+    .secaoSite,
+    #servicos {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .section-heading,
+    .cabecalhoSecao {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .gradeTrabalhosRecentes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .trabalhoRecenteCard {
+        border-radius: 16px;
+    }
+
+    .cardsAtalhos,
+    .quick-links {
+        padding-bottom: 70px;
+    }
+
+    .cardAtalho,
+    .quick-link-card {
+        min-height: 110px;
+        padding: 18px;
+    }
+
+    .listaServicos {
+        gap: 14px;
+    }
+
+    .servicoCard {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .secaoContato {
+        padding: 75px 0;
+    }
+
+    .contatoConteudo h2 {
+        font-size: clamp(36px, 11vw, 48px);
+    }
+
+    .botaoContato {
+        width: 100%;
+    }
+
+    .rodapeSite {
+    margin-top: 45px;
+    padding: 48px 18px 24px;
+    }
+
+    .rodapeSite > div:first-child strong {
+    font-size: 25px;
+    }   
+
+    .rodapeLinks {
+    gap: 8px;
+    }
+
+    .rodapeLinks a {
+    padding: 9px 14px;
+    font-size: 11px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .heroConteudo h1 {
+        font-size: 40px;
+    }
+
+    .heroInfo {
+        gap: 9px;
+    }
+
+    .gradeTrabalhosRecentes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .itemContato {
+        grid-template-columns: 44px minmax(0, 1fr) 16px;
+        padding: 16px;
+    }
+
+    .itemContato > i:first-child {
+        width: 44px;
+        height: 44px;
+    }
+
+    .itemContato strong {
+        font-size: 12px;
+    }
+
+    .whatsappFlutuante {
+        right: 15px;
+        bottom: 15px;
+
+        width: 54px;
+        height: 54px;
+
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 340px) {
+
+    .gradeTrabalhosRecentes {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,498 @@
+/* =========================================
+   PÁGINA DA GALERIA
+========================================= */
+
+.container-galeria {
+    width: min(calc(100% - 32px), 920px);
+    margin: 55px auto;
+    padding: 40px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.container-galeria > h1 {
+    margin-bottom: 10px;
+
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 6vw, 58px);
+    line-height: 1.1;
+}
+
+.container-galeria > .descricao {
+    max-width: 620px;
+    margin: 0 auto 30px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ABAS
+========================================= */
+
+.abas-galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+
+    margin: 30px 0;
+    padding: 6px;
+
+    border: 1px solid var(--border);
+    border-radius: 17px;
+
+    background: var(--surface-alt);
+}
+
+.aba-galeria {
+    min-height: 48px;
+    padding: 12px 16px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+    color: var(--text-light);
+
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.aba-galeria:hover {
+    color: var(--primary);
+}
+
+.aba-galeria.ativa {
+    background: var(--surface);
+    color: var(--primary);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.secao-galeria h2 {
+    margin: 10px 0 22px;
+
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+}
+
+.escondido-galeria {
+    display: none;
+}
+
+
+/* =========================================
+   TRABALHOS — ESTILO PINTEREST
+========================================= */
+
+.galeria {
+    column-count: 3;
+    column-gap: 14px;
+
+    margin-bottom: 30px;
+}
+
+.card-trabalho {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 14px;
+
+    overflow: hidden;
+    break-inside: avoid;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+.card-trabalho:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.card-trabalho img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    cursor: pointer;
+
+    transition: transform 0.35s ease;
+}
+
+.card-trabalho:hover img {
+    transform: scale(1.025);
+}
+
+.card-trabalho .titulo-trabalho {
+    margin: 0;
+    padding: 11px 13px 13px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+}
+
+
+/* =========================================
+   ANTES E DEPOIS
+========================================= */
+
+.galeria-antes-depois {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.card-antes-depois {
+    min-width: 0;
+    padding: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+.card-antes-depois:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.comparacao-imagens {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    overflow: hidden;
+    border-radius: 16px;
+
+    background: var(--surface-alt);
+}
+
+.foto-comparacao {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.foto-comparacao span {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    z-index: 2;
+
+    padding: 5px 9px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--text);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.foto-comparacao img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+    cursor: pointer;
+
+    transition: transform 0.35s ease;
+}
+
+.card-antes-depois:hover img {
+    transform: scale(1.02);
+}
+
+.card-antes-depois > .titulo-trabalho {
+    margin-top: 11px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.galeriaVazia,
+.carregandoGaleria {
+    padding: 35px 10px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* =========================================
+   BOTÃO VOLTAR
+========================================= */
+
+.container-galeria .voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 48px;
+    margin-top: 10px;
+    padding: 12px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: var(--surface-alt);
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.container-galeria .voltar:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(20, 12, 18, 0.75);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: min(90vw, 900px);
+    max-height: 88vh;
+
+    transform: scale(0.95);
+    transition: transform 0.25s ease;
+}
+
+.lightbox.active .lightbox-conteudo {
+    transform: scale(1);
+}
+
+.lightbox-conteudo img {
+    display: block;
+    max-width: 100%;
+    max-height: 78vh;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.38);
+}
+
+#tituloLightbox {
+    margin-top: 13px;
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.lightbox-fechar,
+.lightbox-seta {
+    position: absolute;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    width: 46px;
+    height: 46px;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+
+    cursor: pointer;
+    font-size: 28px;
+
+    transition: var(--transition);
+}
+
+.lightbox-fechar:hover,
+.lightbox-seta:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.lightbox-fechar {
+    top: 22px;
+    right: 22px;
+}
+
+.lightbox-seta {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-seta:hover {
+    transform: translateY(-50%) scale(1.06);
+}
+
+.lightbox-anterior {
+    left: 24px;
+}
+
+.lightbox-proxima {
+    right: 24px;
+}
+
+body.lightbox-aberto {
+    overflow: hidden;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE DA GALERIA
+========================================= */
+
+@media (max-width: 760px) {
+    .container-galeria {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+        padding: 25px 16px;
+
+        border-radius: 22px;
+    }
+
+    .galeria {
+        column-count: 2;
+        column-gap: 9px;
+    }
+
+    .card-trabalho {
+        margin-bottom: 9px;
+        border-radius: 15px;
+    }
+
+    .galeria-antes-depois {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-comparacao img {
+        aspect-ratio: 4 / 5;
+    }
+
+    .lightbox {
+        padding: 16px;
+    }
+
+    .lightbox-conteudo {
+        max-width: 94vw;
+    }
+
+    .lightbox-conteudo img {
+        max-height: 72vh;
+        border-radius: 14px;
+    }
+
+    .lightbox-fechar {
+        top: 14px;
+        right: 14px;
+    }
+
+    .lightbox-seta {
+        top: auto;
+        bottom: 22px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+    .lightbox-anterior {
+        left: calc(50% - 58px);
+    }
+
+    .lightbox-proxima {
+        right: calc(50% - 58px);
+    }
+}
+
+@media (max-width: 360px) {
+    .galeria {
+        column-count: 1;
+    }
+
+    .abas-galeria {
+        gap: 5px;
+    }
+
+    .aba-galeria {
+        padding: 10px 6px;
+        font-size: 11px;
+    }
+}

@@ -13,6 +13,12 @@
     <title>Painel | Mariane Nails</title>
 
     <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css"
+    >
+
+
+    <link
         rel="stylesheet"
         href="admin.css"
     >
@@ -32,6 +38,12 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
 
 </head>
 
@@ -45,36 +57,40 @@
 
         <h2>💅 Mariane Nails</h2>
 
-        <nav>
+<nav>
 
-            <a
-                id="menuDashboard"
-                class="ativo"
-            >
-                🏠 Dashboard
-            </a>
+    <a id="menuDashboard" class="ativo">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+    </a>
 
-            <a id="menuPerfil">
-                👤 Perfil
-            </a>
+    <a id="menuPerfil">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </a>
 
-            <a id="menuGaleria">
-                🖼️ Galeria
-            </a>
+    <a id="menuGaleria">
+        <i class="fa-solid fa-images"></i>
+        <span>Galeria</span>
+    </a>
 
-            <a id="menuServicos">
-                💅 Serviços
-            </a>
+    <a id="menuServicos">
+        <i class="fa-solid fa-hand-sparkles"></i>
+        <span>Serviços</span>
+    </a>
 
-            <a id="menuRedes">
-                📱 Redes Sociais
-            </a>
+    <a id="menuRedes">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Redes Sociais</span>
+    </a>
 
-            <a id="logout">
-                🚪 Sair
-            </a>
+    <a id="logout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Sair</span>
+    </a>
 
-        </nav>
+
+</nav>
 
     </aside>
 
@@ -84,58 +100,114 @@
 
         <!-- DASHBOARD -->
 
-        <section
-            id="dashboard"
-            class="pagina"
-        >
+        <section id="dashboard" class="pagina">
 
-            <h1>Dashboard</h1>
+    <div class="dashboardCabecalho">
+
+        <div>
+            <span class="dashboardEtiqueta">
+                Painel administrativo
+            </span>
+
+            <h1>Olá, Mariane</h1>
 
             <p>
-                Bem-vinda ao painel da Mariane Nails Studio 💖
+                Gerencie as principais informações do seu site.
             </p>
+        </div>
 
-            <div class="cards">
+        <a
+            href="../index.html"
+            class="verSite"
+            target="_blank"
+        >
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Ver site
+        </a>
 
-                <div class="card">
+    </div>
 
-                    <h3>
-                        👤 Perfil
-                    </h3>
+    <div class="cardsDashboard">
 
-                    <p>
-                        Atualize nome, descrição e foto.
-                    </p>
+        <button
+            class="cardDashboard"
+            type="button"
+            data-abrir-pagina="perfil"
+        >
+            <span class="iconeCardDashboard">
+                <i class="fa-solid fa-user"></i>
+            </span>
 
-                </div>
+            <span class="conteudoCardDashboard">
+                <strong>Perfil</strong>
+                <small>
+                    Atualize nome, descrição e foto.
+                </small>
+            </span>
 
-                <div class="card">
+            <i class="fa-solid fa-arrow-right setaCard"></i>
+        </button>
 
-                    <h3>
-                        🖼️ Galeria
-                    </h3>
+        <button
+            class="cardDashboard"
+            type="button"
+            data-abrir-pagina="galeria"
+        >
+            <span class="iconeCardDashboard">
+                <i class="fa-solid fa-images"></i>
+            </span>
 
-                    <p>
-                        Gerencie as fotos dos trabalhos.
-                    </p>
+            <span class="conteudoCardDashboard">
+                <strong>Galeria</strong>
+                <small>
+                    Publique trabalhos e Antes/Depois.
+                </small>
+            </span>
 
-                </div>
+            <i class="fa-solid fa-arrow-right setaCard"></i>
+        </button>
 
-                <div class="card">
+        <button
+            class="cardDashboard"
+            type="button"
+            data-abrir-pagina="servicos"
+        >
+            <span class="iconeCardDashboard">
+                <i class="fa-solid fa-hand-sparkles"></i>
+            </span>
 
-                    <h3>
-                        💅 Serviços
-                    </h3>
+            <span class="conteudoCardDashboard">
+                <strong>Serviços</strong>
+                <small>
+                    Gerencie serviços e valores.
+                </small>
+            </span>
 
-                    <p>
-                        Atualize preços e serviços.
-                    </p>
+            <i class="fa-solid fa-arrow-right setaCard"></i>
+        </button>
 
-                </div>
+        <button
+            class="cardDashboard"
+            type="button"
+            data-abrir-pagina="redes"
+        >
+            <span class="iconeCardDashboard">
+                <i class="fa-brands fa-instagram"></i>
+            </span>
 
-            </div>
+            <span class="conteudoCardDashboard">
+                <strong>Redes Sociais</strong>
+                <small>
+                    Atualize seus links e endereço.
+                </small>
+            </span>
 
-        </section>
+            <i class="fa-solid fa-arrow-right setaCard"></i>
+        </button>
+
+    </div>
+
+</section>
 
         <!-- PERFIL -->
 
@@ -218,21 +290,92 @@
                     Escolha entre uma foto de trabalho ou um comparativo de antes e depois.
                 </p>
 
-                <label for="tipoGaleria">
-                    Tipo de publicação
-                </label>
+               <div class="grupoTipoGaleria">
 
-                <select id="tipoGaleria">
+    <label>
+        Tipo de publicação
+    </label>
 
-                    <option value="trabalho">
-                        Trabalho
-                    </option>
+    <p class="descricaoCampo">
+        Escolha como o conteúdo será exibido na galeria.
+    </p>
 
-                    <option value="antes_depois">
-                        Antes e Depois
-                    </option>
+    <div class="opcoesTipoGaleria">
 
-                </select>
+        <button
+            type="button"
+            class="opcaoTipoGaleria ativa"
+            data-tipo-galeria="trabalho"
+        >
+
+            <span class="iconeTipoGaleria">
+                <i class="fa-solid fa-image"></i>
+            </span>
+
+            <span class="textoTipoGaleria">
+
+                <strong>
+                    Trabalho
+                </strong>
+
+                <small>
+                    Publicação com uma única imagem.
+                </small>
+
+            </span>
+
+            <span class="marcadorTipoGaleria">
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+        </button>
+
+        <button
+            type="button"
+            class="opcaoTipoGaleria"
+            data-tipo-galeria="antes_depois"
+        >
+
+            <span class="iconeTipoGaleria">
+                <i class="fa-solid fa-table-columns"></i>
+            </span>
+
+            <span class="textoTipoGaleria">
+
+                <strong>
+                    Antes e Depois
+                </strong>
+
+                <small>
+                    Comparativo utilizando duas imagens.
+                </small>
+
+            </span>
+
+            <span class="marcadorTipoGaleria">
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+        </button>
+
+    </div>
+
+    <select
+        id="tipoGaleria"
+        class="selectTipoGaleriaOculto"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <option value="trabalho">
+            Trabalho
+        </option>
+
+        <option value="antes_depois">
+            Antes e Depois
+        </option>
+    </select>
+
+    </div>
 
                 <label for="tituloGaleria">
                     Título
@@ -472,9 +615,99 @@
 
 </div>
 
+<!-- EDITOR DE RECORTE DE IMAGEM -->
+
+<div
+    id="modalRecorte"
+    class="modalRecorte escondido"
+    aria-hidden="true"
+>
+
+    <div class="modalRecorteConteudo">
+
+        <div class="modalRecorteCabecalho">
+
+            <div>
+                <h2>Ajustar imagem</h2>
+
+                <p>
+                    Arraste e aplique zoom para enquadrar a foto.
+                </p>
+            </div>
+
+            <button
+                id="fecharRecorte"
+                class="fecharRecorte"
+                type="button"
+                aria-label="Fechar editor"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="areaRecorte">
+
+            <img
+                id="imagemRecorte"
+                src=""
+                alt="Imagem para recortar"
+            >
+
+        </div>
+
+        <p class="informacaoRecorte">
+            A imagem será salva no formato 4:5 — 1080 × 1350 px.
+        </p>
+
+        <div class="controlesRecorte">
+
+            <button
+                id="diminuirZoom"
+                type="button"
+                class="botaoRecorteSecundario"
+            >
+                − Zoom
+            </button>
+
+            <button
+                id="aumentarZoom"
+                type="button"
+                class="botaoRecorteSecundario"
+            >
+                + Zoom
+            </button>
+
+            <button
+                id="cancelarRecorte"
+                type="button"
+                class="botaoRecorteSecundario"
+            >
+                Cancelar
+            </button>
+
+            <button
+                id="confirmarRecorte"
+                type="button"
+            >
+                Usar imagem
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
+
 <script src="../supabase.js"></script>
+
+<script src="cropper.js"></script>
 
 <script src="admin.js"></script>
 

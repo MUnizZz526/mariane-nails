@@ -3,123 +3,285 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | Mariane Nails Studio</title>
 
-<title>Galeria | Mariane Nails ✨</title>
+    <meta
+        name="description"
+        content="Confira os trabalhos e comparativos de antes e depois da Mariane Nails Studio."
+    >
 
-<link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    </head>
+
+
+    <body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="site-header">
+
+        <a
+            href="index.html"
+            class="site-brand"
+            aria-label="Ir para a página inicial"
+        >
+            <span class="marcaNome">
+                Mariane Nails
+            </span>
+
+            <span class="marcaStudio">
+                Studio
+            </span>
+        </a>
+
+        <nav
+            class="site-nav"
+            aria-label="Navegação principal"
+        >
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="galeria.html">
+                Trabalhos
+            </a>
+
+            <a href="valores.html">
+                Valores
+            </a>
+
+            <a href="index.html#contato">
+                Contato
+            </a>
+        </nav>
+
+        <a
+            href="https://wa.me/5511970684683?text=Olá!%20Gostaria%20de%20agendar%20um%20horário."
+            class="header-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Agendar
+        </a>
+
+    </header>
+
+    <!-- CONTEÚDO -->
+
+    <main>
+
+        <div class="container container-galeria">
+
+            <h1>
+                Galeria de trabalhos
+            </h1>
+
+            <p class="descricao">
+                Confira alguns trabalhos e resultados realizados.
+            </p>
+
+            <div class="abas-galeria">
+
+                <button
+                    id="abaTrabalhos"
+                    class="aba-galeria ativa"
+                    type="button"
+                >
+                    Trabalhos
+                </button>
+
+                <button
+                    id="abaAntesDepois"
+                    class="aba-galeria"
+                    type="button"
+                >
+                    Antes e Depois
+                </button>
 
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-
-</head>
-
-
-<body>
-
-
-
-
-    <div class="container">
-
-
-
-<h1>
-
-    Galeria de Trabalhos 💅
-
-</h1>
-
-
-
-<p class="descricao">
-
-    Confira alguns trabalhos realizados ✨
-
-</p>
-
-
-
-
-
-<div class="galeria">
-
-<!-- As fotos serão carregadas pelo Supabase -->
-
-</div>
-
-
-
-
-
-<a href="index.html" class="botao voltar">
-
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Voltar
-
-
-</a>
-
-
-
-
-
-
-<footer>
-
-<p>
-
-Mariane Nails Studio 💖
-
-</p>
-
-</footer>
-
-
-
-
-</div>
-
-
-
-
-
-
-<!-- Lightbox -->
-
-
-<div class="lightbox">
-
-
-<img src="" alt="Imagem ampliada">
-
-
-</div>
-
-
-
-
-
-<!-- Supabase -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="supabase.js"></script>
-
-<script src="galeria.js"></script>
+            </div>
+
+            <section
+                id="secaoTrabalhos"
+                class="secao-galeria"
+            >
+
+                <h2>
+                    Trabalhos
+                </h2>
+
+                <div
+                    id="galeriaTrabalhos"
+                    class="galeria"
+                >
+                    <p class="carregandoGaleria">
+                        Carregando trabalhos...
+                    </p>
+                </div>
+
+            </section>
+
+            <section
+                id="secaoAntesDepois"
+                class="secao-galeria escondido-galeria"
+            >
+
+                <h2>
+                    Antes e Depois
+                </h2>
+
+                <div
+                    id="galeriaAntesDepois"
+                    class="galeria-antes-depois"
+                >
+                    <p class="carregandoGaleria">
+                        Carregando comparativos...
+                    </p>
+                </div>
+
+            </section>
+
+            <a
+                href="index.html"
+                class="botao voltar"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Voltar para o início
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodapeSite">
+
+        <div>
+            <strong>
+                Mariane Nails Studio
+            </strong>
+
+            <span>
+                Atendimento somente com horário marcado.
+            </span>
+        </div>
+
+        <div class="rodapeLinks">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="galeria.html">
+                Trabalhos
+            </a>
+
+            <a href="valores.html">
+                Valores
+            </a>
+
+            <a href="index.html#contato">
+                Contato
+            </a>
+
+        </div>
+
+        <p>
+            © 2026 Mariane Nails Studio
+        </p>
+
+    </footer>
+
+    <!-- LIGHTBOX -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            class="lightbox-fechar"
+            id="fecharLightbox"
+            type="button"
+            aria-label="Fechar imagem"
+        >
+            ×
+        </button>
+
+        <button
+            class="lightbox-seta lightbox-anterior"
+            id="imagemAnterior"
+            type="button"
+            aria-label="Imagem anterior"
+        >
+            ‹
+        </button>
+
+        <div class="lightbox-conteudo">
+
+            <img
+                id="imagemLightbox"
+                src=""
+                alt="Imagem ampliada"
+            >
+
+            <p id="tituloLightbox"></p>
+
+        </div>
+
+        <button
+            class="lightbox-seta lightbox-proxima"
+            id="proximaImagem"
+            type="button"
+            aria-label="Próxima imagem"
+        >
+            ›
+        </button>
+
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="galeria.js"></script>
 
 
 </body>

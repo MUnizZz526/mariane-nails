@@ -1,0 +1,342 @@
+/* =========================================
+   PÁGINA DE VALORES
+========================================= */
+
+.paginaValores {
+    width: min(calc(100% - 48px), 1120px);
+
+    margin: 0 auto;
+    padding: 70px 0 90px;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.valoresCabecalho {
+    max-width: 680px;
+
+    margin-bottom: 48px;
+}
+
+.valoresCabecalho .section-label {
+    margin-bottom: 16px;
+}
+
+.valoresCabecalho h1 {
+    margin-bottom: 15px;
+
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(46px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.valoresCabecalho p {
+    max-width: 580px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   GRADE DE PREÇOS
+========================================= */
+
+.gradePrecos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   CARD DE PREÇO
+========================================= */
+
+.precoCard {
+    padding: 30px;
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+.precoCard:hover {
+    border-color: rgba(214, 51, 132, 0.45);
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+.precoCardTopo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 28px;
+}
+
+.precoIcone {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 16px;
+
+    background: var(--surface-alt);
+    color: var(--primary);
+
+    font-size: 18px;
+}
+
+.precoCategoria {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.precoCard h2 {
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   LINHAS DE PREÇO
+========================================= */
+
+.listaPrecos {
+    display: flex;
+    flex-direction: column;
+}
+
+.linhaPreco {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 17px 2px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+.linhaPreco strong {
+    color: var(--text);
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   COMBO EM DESTAQUE
+========================================= */
+
+.destaquePreco {
+    margin-top: 14px;
+    padding: 18px;
+
+    border: 1px solid rgba(214, 51, 132, 0.12);
+    border-radius: 15px;
+
+    background: var(--surface-alt);
+    color: var(--primary);
+}
+
+.destaquePreco span {
+    font-weight: 600;
+}
+
+.destaquePreco strong {
+    color: var(--primary);
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   CTA DE AGENDAMENTO
+========================================= */
+
+.valoresCTA {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    width: min(100%, 1000px);
+
+    margin: 28px auto 0;
+    padding: 32px;
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.valoresCTA > div {
+    max-width: 590px;
+}
+
+.valoresCTA .section-label {
+    margin-bottom: 10px;
+}
+
+.valoresCTA h2 {
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-family: "Playfair Display", serif;
+    font-size: 31px;
+    line-height: 1.2;
+}
+
+.valoresCTA p {
+    color: var(--text-light);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   VOLTAR
+========================================= */
+
+.voltarPagina {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 28px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.voltarPagina:hover {
+    color: var(--primary-hover);
+    transform: translateX(-3px);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 760px) {
+
+    .paginaValores {
+        width: calc(100% - 28px);
+        padding: 55px 0 70px;
+    }
+
+    .valoresCabecalho {
+        margin-bottom: 24px;
+    }
+
+    .gradePrecos {
+        grid-template-columns: 1fr;
+    }
+    .paginaValores {
+    padding-top: 45px !important;
+    }
+
+    .gradePrecos {
+    width: min(100%, 960px);
+    }
+
+    .precoCard {
+        padding: 26px;
+    }
+
+    .valoresCTA {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 25px;
+    }
+
+    .valoresCTA .button {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .valoresCabecalho h1 {
+        font-size: 44px;
+    }
+
+    .precoCardTopo {
+        align-items: flex-start;
+    }
+
+    .precoCard h2 {
+        font-size: 23px;
+    }
+
+}
+/* =========================================
+   CORREÇÃO DE ESPAÇAMENTO DA PÁGINA VALORES
+========================================= */
+
+.paginaValores {
+    display: block !important;
+    min-height: auto !important;
+    padding-top: 70px !important;
+}
+
+.valoresCabecalho {
+    min-height: 0 !important;
+    height: auto !important;
+    margin-bottom: 42px !important;
+    padding: 0 !important;
+}
+
+.gradePrecos {
+    position: static !important;
+    margin-top: 0 !important;
+    transform: none !important;
+}

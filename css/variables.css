@@ -1,0 +1,52 @@
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+
+    /* CORES */
+
+    --primary:#d63384;
+    --primary-hover:#bf2b73;
+
+    --whatsapp:#25D366;
+    --whatsapp-hover:#1fb85a;
+
+    --background:#fff8fb;
+
+    --surface:#ffffff;
+    --surface-alt:#fff1f7;
+
+    --border:#f2d7e6;
+
+    --text:#2f2f2f;
+    --text-light:#6b7280;
+
+    /* SOMBRAS */
+
+    --shadow-sm:
+        0 8px 18px rgba(0,0,0,.06);
+
+    --shadow:
+        0 18px 45px rgba(214,51,132,.12);
+
+    --shadow-lg:
+        0 30px 70px rgba(214,51,132,.18);
+
+    /* BORDAS */
+
+    --radius-sm:12px;
+    --radius:22px;
+    --radius-lg:34px;
+
+    /* ESPAÇAMENTO */
+
+    --container:1180px;
+
+    --section:110px;
+
+    /* TRANSIÇÕES */
+
+    --transition:.30s ease;
+
+}
