@@ -77,13 +77,15 @@ async function carregarTrabalhosRecentes() {
 
     const perfilId = "f30eedbf-1c8a-4c1d-a44d-18ee493ad9bf";
 
+    const limite = window.innerWidth <= 768 ? 4 : 6;
+
     const { data, error } = await supabaseClient
         .from("gallery")
         .select("id, titulo, imagem")
         .eq("profile_id", perfilId)
         .eq("tipo", "trabalho")
         .order("created_at", { ascending: false })
-        .limit(4);
+        .limit(limite);
 
     if (error) {
 
