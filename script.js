@@ -83,7 +83,7 @@ async function carregarTrabalhosRecentes() {
         .eq("profile_id", perfilId)
         .eq("tipo", "trabalho")
         .order("created_at", { ascending: false })
-        .limit(6);
+        .limit(4);
 
     if (error) {
 
