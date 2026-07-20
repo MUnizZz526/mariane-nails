@@ -198,6 +198,44 @@
     transform: scale(1.04);
 }
 
+.comparativoPreviaAtendimento {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ladoPreviaAtendimento {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.ladoPreviaAtendimento:first-child {
+    border-right: 2px solid #fff;
+}
+
+.ladoPreviaAtendimento small {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    z-index: 2;
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--text);
+    backdrop-filter: blur(6px);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+}
+
+.ladoPreviaAtendimento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .carregandoAtendimento {
     grid-column: 1 / -1;
     padding: 34px 15px;
@@ -565,14 +603,29 @@
 }
 
 .fotoPerfilLinktree {
+    position: relative;
+    z-index: 1;
+
     width: 112px;
     height: 112px;
     margin-bottom: 16px;
     padding: 5px;
-    border: 1px solid var(--border);
+    border: 0;
     border-radius: 50%;
-    background: #fff;
-    box-shadow: var(--shadow);
+    background: linear-gradient(145deg, #ffffff 15%, #f2a9cd 52%, var(--primary));
+    box-shadow:
+        0 16px 38px rgba(214, 51, 132, 0.22),
+        0 0 0 7px rgba(255, 255, 255, 0.62);
+}
+
+.fotoPerfilLinktree::before {
+    content: "";
+    position: absolute;
+    inset: -22px;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(214, 51, 132, 0.2), transparent 68%);
+    filter: blur(4px);
 }
 
 .fotoPerfilLinktree img {
@@ -580,6 +633,8 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 24%;
+    filter: saturate(1.04) contrast(1.02);
 }
 
 .disponibilidadeLinktree {
@@ -620,6 +675,8 @@
 }
 
 .linkLinktree {
+    position: relative;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 50px minmax(0, 1fr) 18px;
     align-items: center;
@@ -637,6 +694,18 @@
     transition: var(--transition);
 }
 
+.linkLinktree::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 0;
+    width: 4px;
+    border-radius: 0 999px 999px 0;
+    background: var(--primary);
+    opacity: 0.75;
+}
+
 .linkLinktree:hover,
 .linkLinktree:focus-visible {
     border-color: var(--primary);
@@ -648,6 +717,10 @@
     border-color: transparent;
     background: var(--whatsapp);
     color: #fff;
+}
+
+.linkLinktreeWhatsapp::before {
+    background: #fff;
 }
 
 .linkLinktreeWhatsapp:hover {
@@ -662,6 +735,45 @@
 
 .linkLinktreeDestaque .linkLinktreeIcone {
     background: var(--primary);
+    color: #fff;
+}
+
+.linksLinktree > :nth-child(3) {
+    background: linear-gradient(135deg, #ffffff, #fff7e8);
+}
+
+.linksLinktree > :nth-child(3)::before {
+    background: #e5a028;
+}
+
+.linksLinktree > :nth-child(3) .linkLinktreeIcone {
+    background: #fff1ce;
+    color: #bc7610;
+}
+
+.linksLinktree > :nth-child(4) {
+    background: linear-gradient(135deg, #ffffff, #fff0f3);
+}
+
+.linksLinktree > :nth-child(4)::before {
+    background: #e95572;
+}
+
+.linksLinktree > :nth-child(4) .linkLinktreeIcone {
+    background: #ffe2e8;
+    color: #ce3654;
+}
+
+.linksLinktree > :nth-child(5) {
+    background: linear-gradient(135deg, #ffffff, #f7efff);
+}
+
+.linksLinktree > :nth-child(5)::before {
+    background: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+}
+
+.linksLinktree > :nth-child(5) .linkLinktreeIcone {
+    background: linear-gradient(135deg, #833ab4, #e1306c, #f77737);
     color: #fff;
 }
 

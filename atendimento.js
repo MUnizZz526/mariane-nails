@@ -49,12 +49,24 @@ function atualizarLinksDoPerfil(perfil = {}) {
     if (enderecoCompleto) enderecoCompleto.textContent = endereco;
     if (resumoEndereco) resumoEndereco.textContent = endereco;
     if (mapa) mapa.href = linkMapa;
+
+    const nome = document.getElementById("nomePerfilLinktree");
+    const descricao = document.getElementById("descricaoPerfilLinktree");
+    const foto = document.getElementById("fotoPerfilLinktree");
+
+    if (nome && perfil.nome) nome.textContent = perfil.nome;
+    if (descricao && perfil.descricao) {
+        descricao.textContent = String(perfil.descricao)
+            .replace(/<br\s*\/?>/gi, " ")
+            .replace(/<[^>]*>/g, "");
+    }
+    if (foto && perfil.foto) foto.src = perfil.foto;
 }
 
 async function carregarPerfilAtendimento() {
     const { data, error } = await supabaseClient
         .from("profiles")
-        .select("whatsapp, instagram, endereco")
+        .select("nome, descricao, foto, whatsapp, instagram, endereco")
         .eq("id", PERFIL_ID_ATENDIMENTO)
         .single();
 
@@ -73,9 +85,8 @@ async function carregarPreviaGaleriaAtendimento() {
 
     const { data, error } = await supabaseClient
         .from("gallery")
-        .select("id, titulo, imagem")
+        .select("id, titulo, tipo, imagem, imagem_depois")
         .eq("profile_id", PERFIL_ID_ATENDIMENTO)
-        .eq("tipo", "trabalho")
         .order("created_at", { ascending: false })
         .limit(4);
 
@@ -92,6 +103,22 @@ async function carregarPreviaGaleriaAtendimento() {
 
     container.innerHTML = data.map((trabalho) => {
         const titulo = trabalho.titulo || "Trabalho realizado";
+
+        if (trabalho.tipo === "antes_depois" && trabalho.imagem_depois) {
+            return `
+                <a href="galeria.html" class="fotoPreviaAtendimento comparativoPreviaAtendimento" aria-label="Abrir comparativo: ${escaparHtmlAtendimento(titulo)}">
+                    <span class="ladoPreviaAtendimento">
+                        <small>Antes</small>
+                        <img src="${escaparHtmlAtendimento(trabalho.imagem || "")}" alt="Antes: ${escaparHtmlAtendimento(titulo)}" loading="lazy">
+                    </span>
+                    <span class="ladoPreviaAtendimento">
+                        <small>Depois</small>
+                        <img src="${escaparHtmlAtendimento(trabalho.imagem_depois)}" alt="Depois: ${escaparHtmlAtendimento(titulo)}" loading="lazy">
+                    </span>
+                </a>
+            `;
+        }
+
         return `
             <a href="galeria.html" class="fotoPreviaAtendimento" aria-label="Abrir galeria: ${escaparHtmlAtendimento(titulo)}">
                 <img src="${escaparHtmlAtendimento(trabalho.imagem || "")}" alt="${escaparHtmlAtendimento(titulo)}" loading="lazy">

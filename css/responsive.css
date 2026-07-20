@@ -8,7 +8,7 @@
     .cabecalhoSite {
         width: calc(100% - 32px);
     }
- 
+
     .menuSite {
         display: none;
     }
@@ -606,21 +606,27 @@
         overflow: hidden;
         padding: 0;
         border-radius: 30px;
+        border: 2px solid rgba(255, 255, 255, 0.9);
         background: #d9bdca;
-        box-shadow: var(--shadow);
+        box-shadow:
+            0 24px 54px rgba(105, 48, 77, 0.2),
+            0 0 0 5px rgba(255, 255, 255, 0.48);
     }
 
     .mobileHeroCard > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 25%;
+        object-position: center 23%;
+        filter: saturate(1.06) contrast(1.025) brightness(1.02);
     }
 
     .mobileHeroSombra {
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, rgba(20, 12, 16, 0.03) 35%, rgba(25, 12, 19, 0.82) 100%);
+        background:
+            linear-gradient(180deg, rgba(255, 216, 236, 0.08) 20%, transparent 46%),
+            linear-gradient(180deg, rgba(20, 12, 16, 0.02) 34%, rgba(25, 12, 19, 0.86) 100%);
     }
 
     .mobileVoltarCentral {
@@ -739,6 +745,8 @@
     }
 
     .mobileAcaoCard {
+        position: relative;
+        overflow: hidden;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
@@ -748,6 +756,23 @@
         border-radius: 22px;
         background: var(--surface);
         box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mobileAcaoCard::after {
+        content: "";
+        position: absolute;
+        right: -24px;
+        bottom: -28px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: currentColor;
+        opacity: 0.055;
+    }
+
+    .mobileAcaoCard:active {
+        transform: scale(0.97);
     }
 
     .mobileAcaoCard i {
@@ -760,6 +785,7 @@
         background: var(--surface-alt);
         color: var(--primary);
         font-size: 17px;
+        box-shadow: 0 8px 18px rgba(214, 51, 132, 0.12);
     }
 
     .mobileAcaoCard strong {
@@ -770,6 +796,46 @@
     .mobileAcaoCard span {
         color: var(--text-light);
         font-size: 10px;
+    }
+
+    .mobileAcoesGrade > :nth-child(1) {
+        border-color: #f2d9a9;
+        background: linear-gradient(145deg, #fffdf8, #fff6df);
+    }
+
+    .mobileAcoesGrade > :nth-child(1) i {
+        background: #ffefc8;
+        color: #b8750e;
+    }
+
+    .mobileAcoesGrade > :nth-child(2) {
+        border-color: #f3ced7;
+        background: linear-gradient(145deg, #fffafb, #ffedf1);
+    }
+
+    .mobileAcoesGrade > :nth-child(2) i {
+        background: #ffe0e7;
+        color: #cf3d5c;
+    }
+
+    .mobileAcoesGrade > :nth-child(3) {
+        border-color: #d7c9ed;
+        background: linear-gradient(145deg, #fcfaff, #f3ecff);
+    }
+
+    .mobileAcoesGrade > :nth-child(3) i {
+        background: #e9ddfb;
+        color: #7945b4;
+    }
+
+    .mobileAcoesGrade > :nth-child(4) {
+        border-color: #eacbe7;
+        background: linear-gradient(145deg, #fffafd, #f9eafa);
+    }
+
+    .mobileAcoesGrade > :nth-child(4) i {
+        background: linear-gradient(135deg, #833ab4, #e1306c, #f77737);
+        color: #fff;
     }
 
     .mobileSecao {
