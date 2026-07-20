@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -7,7 +7,7 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
     <title>Painel | Mariane Nails</title>
@@ -22,6 +22,8 @@
         rel="stylesheet"
         href="admin.css"
     >
+
+    <link rel="stylesheet" href="admin-mobile.css">
 
     <link
         rel="preconnect"
@@ -55,33 +57,28 @@
 
     <aside class="sidebar">
 
-        <h2>💅 Mariane Nails</h2>
+        <h2><span>💅</span> Painel Mariane</h2>
 
 <nav>
 
     <a id="menuDashboard" class="ativo">
         <i class="fa-solid fa-house"></i>
-        <span>Dashboard</span>
+        <span>Início</span>
     </a>
 
     <a id="menuPerfil">
         <i class="fa-solid fa-user"></i>
-        <span>Perfil</span>
+        <span>Nome e foto</span>
     </a>
 
     <a id="menuGaleria">
         <i class="fa-solid fa-images"></i>
-        <span>Galeria</span>
-    </a>
-
-    <a id="menuServicos">
-        <i class="fa-solid fa-hand-sparkles"></i>
-        <span>Serviços</span>
+        <span>Fotos</span>
     </a>
 
     <a id="menuRedes">
-        <i class="fa-brands fa-instagram"></i>
-        <span>Redes Sociais</span>
+        <i class="fa-solid fa-address-card"></i>
+        <span>Contato</span>
     </a>
 
     <a id="logout">
@@ -106,13 +103,13 @@
 
         <div>
             <span class="dashboardEtiqueta">
-                Painel administrativo
+                Seu painel
             </span>
 
-            <h1>Olá, Mariane</h1>
+            <h1>O que deseja alterar?</h1>
 
             <p>
-                Gerencie as principais informações do seu site.
+                Toque em uma opção. As mudanças aparecem no site depois de salvar.
             </p>
         </div>
 
@@ -139,9 +136,9 @@
             </span>
 
             <span class="conteudoCardDashboard">
-                <strong>Perfil</strong>
+                <strong>Nome e foto</strong>
                 <small>
-                    Atualize nome, descrição e foto.
+                    Altere sua apresentação.
                 </small>
             </span>
 
@@ -158,28 +155,9 @@
             </span>
 
             <span class="conteudoCardDashboard">
-                <strong>Galeria</strong>
+                <strong>Adicionar fotos</strong>
                 <small>
-                    Publique trabalhos e Antes/Depois.
-                </small>
-            </span>
-
-            <i class="fa-solid fa-arrow-right setaCard"></i>
-        </button>
-
-        <button
-            class="cardDashboard"
-            type="button"
-            data-abrir-pagina="servicos"
-        >
-            <span class="iconeCardDashboard">
-                <i class="fa-solid fa-hand-sparkles"></i>
-            </span>
-
-            <span class="conteudoCardDashboard">
-                <strong>Serviços</strong>
-                <small>
-                    Gerencie serviços e valores.
+                    Publique trabalhos e comparativos.
                 </small>
             </span>
 
@@ -196,9 +174,9 @@
             </span>
 
             <span class="conteudoCardDashboard">
-                <strong>Redes Sociais</strong>
+                <strong>Contato e local</strong>
                 <small>
-                    Atualize seus links e endereço.
+                    WhatsApp, Instagram e endereço.
                 </small>
             </span>
 
@@ -219,8 +197,10 @@
             <div class="painel">
 
                 <h2>
-                    Editar Perfil
+                    Nome e descrição
                 </h2>
+
+                <p class="dicaAdmin"><i class="fa-solid fa-circle-info"></i> Escreva aqui como você quer se apresentar para as clientes.</p>
 
                 <label for="nome">
                     Nome
@@ -246,8 +226,10 @@
             <div class="painel">
 
                 <h2>
-                    Foto de Perfil
+                    Sua foto
                 </h2>
+
+                <p class="dicaAdmin"><i class="fa-solid fa-camera"></i> Escolha uma foto clara e centralizada. Você poderá ajustar antes de salvar.</p>
 
                 <div class="fotoPerfil">
 
@@ -266,7 +248,7 @@
                 >
 
                 <button id="salvarFoto">
-                    Atualizar Foto
+                    Salvar nova foto
                 </button>
 
             </div>
@@ -283,11 +265,11 @@
             <div class="painel">
 
                 <h2>
-                    Adicionar à galeria
+                    Publicar uma foto
                 </h2>
 
                 <p>
-                    Escolha entre uma foto de trabalho ou um comparativo de antes e depois.
+                    Primeiro escolha o tipo de publicação. Depois selecione a foto e toque em publicar.
                 </p>
 
                <div class="grupoTipoGaleria">
@@ -297,7 +279,7 @@
     </label>
 
     <p class="descricaoCampo">
-        Escolha como o conteúdo será exibido na galeria.
+        Toque em uma das opções abaixo.
     </p>
 
     <div class="opcoesTipoGaleria">
@@ -319,7 +301,7 @@
                 </strong>
 
                 <small>
-                    Publicação com uma única imagem.
+                    Uma foto do resultado final.
                 </small>
 
             </span>
@@ -347,7 +329,7 @@
                 </strong>
 
                 <small>
-                    Comparativo utilizando duas imagens.
+                    Duas fotos: uma antes e outra depois.
                 </small>
 
             </span>
@@ -378,13 +360,13 @@
     </div>
 
                 <label for="tituloGaleria">
-                    Título
+                    Título <span class="campoOpcional">(opcional)</span>
                 </label>
 
                 <input
                     id="tituloGaleria"
                     type="text"
-                    placeholder="Ex: Alongamento em gel"
+                    placeholder="Ex.: Esmaltação em gel"
                 >
 
                 <!-- FOTO DE TRABALHO -->
@@ -484,7 +466,7 @@
                 </div>
 
                 <button id="salvarGaleria">
-                    Adicionar à Galeria
+                    Publicar no site
                 </button>
 
                 <p
@@ -501,11 +483,11 @@
                     <div>
 
                         <h2>
-                            Fotos cadastradas
+                            Fotos publicadas
                         </h2>
 
                         <p>
-                            Visualize e remova os trabalhos publicados.
+                            Tudo que já aparece na galeria do site.
                         </p>
 
                     </div>
@@ -532,27 +514,6 @@
 
         </section>
 
-        <!-- SERVIÇOS -->
-
-        <section
-            id="servicos"
-            class="pagina escondido"
-        >
-
-            <div class="painel">
-
-                <h2>
-                    Serviços
-                </h2>
-
-                <p>
-                    Em breve você poderá cadastrar e editar todos os serviços.
-                </p>
-
-            </div>
-
-        </section>
-
         <!-- REDES -->
 
         <section
@@ -563,8 +524,10 @@
             <div class="painel">
 
                 <h2>
-                    Redes Sociais
+                    Contato e localização
                 </h2>
+
+                <p class="dicaAdmin"><i class="fa-solid fa-circle-info"></i> Preencha somente os dados que deseja mostrar para as clientes.</p>
 
                 <label for="whatsapp">
                     WhatsApp
@@ -597,7 +560,7 @@
                 >
 
                 <button id="salvarRedes">
-                    Salvar Redes
+                    Salvar contato e local
                 </button>
 
             </div>

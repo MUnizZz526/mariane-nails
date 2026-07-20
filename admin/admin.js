@@ -154,7 +154,7 @@ async function salvarRedes() {
         })
         .eq("id", perfilId);
 
-    alterarBotao(botao, false, "Salvar Redes");
+    alterarBotao(botao, false, "Salvar contato e local");
 
     if (error) {
         alert("Erro ao salvar redes: " + error.message);
@@ -259,7 +259,7 @@ async function salvarFoto() {
     } catch (error) {
         alert(error.message || "Não foi possível atualizar a foto.");
     } finally {
-        alterarBotao(botao, false, "Atualizar Foto");
+        alterarBotao(botao, false, "Salvar nova foto");
     }
 }
 
@@ -501,7 +501,7 @@ async function salvarGaleria() {
         alterarBotao(
             botao,
             false,
-            "Adicionar à Galeria"
+            "Publicar no site"
         );
     }
 }
@@ -771,7 +771,6 @@ window.addEventListener("DOMContentLoaded", async () => {
         "dashboard",
         "perfil",
         "galeria",
-        "servicos",
         "redes"
     ];
 
