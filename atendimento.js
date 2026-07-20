@@ -23,6 +23,10 @@ function normalizarInstagram(valor = "") {
     return String(valor).trim().replace(/^@/, "") || INSTAGRAM_PADRAO;
 }
 
+function nomePublico(valor = "") {
+    return String(valor || "Mariane Nails").replace(/\s+Studio\s*$/i, "").trim();
+}
+
 function criarLinkWhatsapp(numero) {
     const mensagem = encodeURIComponent("Olá! Gostaria de agendar um horário.");
     return `https://wa.me/${normalizarWhatsapp(numero)}?text=${mensagem}`;
@@ -54,11 +58,12 @@ function atualizarLinksDoPerfil(perfil = {}) {
     const descricao = document.getElementById("descricaoPerfilLinktree");
     const foto = document.getElementById("fotoPerfilLinktree");
 
-    if (nome && perfil.nome) nome.textContent = perfil.nome;
+    if (nome) nome.textContent = nomePublico(perfil.nome);
     if (descricao && perfil.descricao) {
         descricao.textContent = String(perfil.descricao)
             .replace(/<br\s*\/?>/gi, " ")
-            .replace(/<[^>]*>/g, "");
+            .replace(/<[^>]*>/g, "")
+            .replace(/(?:,?\s*e\s+|,\s*)nail\s*art\.?/gi, ".");
     }
     if (foto && perfil.foto) foto.src = perfil.foto;
 }

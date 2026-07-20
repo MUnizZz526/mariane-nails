@@ -1,5 +1,5 @@
 /* =====================================
-   MARIANE NAILS STUDIO
+   MARIANE NAILS
 ===================================== */
 
 // ===============================
@@ -60,17 +60,24 @@ async function carregarPerfil() {
         return;
     }
 
-    document.getElementById("nomePerfil").textContent = data.nome;
-    document.getElementById("descricaoPerfil").innerHTML = data.descricao;
+    const nomePublico = String(data.nome || "Mariane Nails")
+        .replace(/\s+Studio\s*$/i, "")
+        .trim();
+
+    document.getElementById("nomePerfil").textContent = nomePublico;
+    const descricaoPublica = String(data.descricao || "")
+        .replace(/(?:,?\s*e\s+|,\s*)nail\s*art\.?/gi, ".");
+
+    document.getElementById("descricaoPerfil").innerHTML = descricaoPublica;
     document.getElementById("fotoPerfil").src = data.foto;
 
     const nomeMobile = document.getElementById("nomePerfilMobile");
     const descricaoMobile = document.getElementById("descricaoPerfilMobile");
     const fotoMobile = document.getElementById("fotoPerfilMobile");
 
-    if (nomeMobile) nomeMobile.textContent = data.nome || "Mariane Nails Studio";
+    if (nomeMobile) nomeMobile.textContent = nomePublico;
     if (descricaoMobile) {
-        descricaoMobile.textContent = String(data.descricao || "")
+        descricaoMobile.textContent = descricaoPublica
             .replace(/<br\s*\/?>/gi, " ")
             .replace(/<[^>]*>/g, "");
     }
