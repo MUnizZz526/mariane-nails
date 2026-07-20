@@ -72,6 +72,12 @@
 
 .site-nav a{
 
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
     font-size:15px;
 
     font-weight:500;
@@ -117,5 +123,17 @@
     background:var(--primary-hover);
 
     transform:translateY(-2px);
+
+}
+
+.site-nav a i{
+
+    display:none;
+
+}
+
+.site-nav a.ativo{
+
+    color:var(--primary);
 
 }

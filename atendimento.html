@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atendimento | Mariane Nails Studio</title>
+    <meta name="description" content="Consulte valores, localização e formas de contato da Mariane Nails Studio.">
+    <meta name="theme-color" content="#E85D9E">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="public/imagens/favicon.png">
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="site-brand" aria-label="Ir para a página inicial">
+            <span class="marcaNome">Mariane Nails</span>
+            <span class="marcaStudio">Studio</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="index.html">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Início</span>
+            </a>
+            <a href="galeria.html">
+                <i class="fa-regular fa-images" aria-hidden="true"></i>
+                <span>Galeria</span>
+            </a>
+            <a href="atendimento.html" class="ativo" aria-current="page">
+                <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
+                <span>Atendimento</span>
+            </a>
+        </nav>
+
+        <a href="https://wa.me/5511970684683?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="header-cta" id="whatsappCabecalho" target="_blank" rel="noopener noreferrer">
+            Agendar
+        </a>
+    </header>
+
+    <main class="paginaAtendimento">
+        <section class="atendimentoHero">
+            <span class="etiquetaSecao">Tudo em um só lugar</span>
+            <h1>Como podemos ajudar?</h1>
+            <p>Consulte os valores, veja como chegar ou fale diretamente com a Mariane.</p>
+
+            <a href="https://wa.me/5511970684683?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="atendimentoWhatsapp" id="whatsappPrincipal" target="_blank" rel="noopener noreferrer">
+                <span class="atendimentoWhatsappIcone"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+                <span>
+                    <small>Atendimento rápido</small>
+                    <strong>Agendar pelo WhatsApp</strong>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+        </section>
+
+        <section class="atalhosAtendimento" aria-labelledby="tituloAtalhos">
+            <div class="tituloAtendimento">
+                <span class="etiquetaSecao">Acesso rápido</span>
+                <h2 id="tituloAtalhos">Encontre o que precisa</h2>
+            </div>
+
+            <div class="gradeAtendimento">
+                <button class="cardAtendimento" type="button" data-abrir-modal="modalValores">
+                    <span class="cardAtendimentoIcone"><i class="fa-solid fa-tags" aria-hidden="true"></i></span>
+                    <span class="cardAtendimentoTexto">
+                        <strong>Valores</strong>
+                        <small>Confira todos os preços</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <button class="cardAtendimento" type="button" data-abrir-modal="modalLocalizacao">
+                    <span class="cardAtendimentoIcone"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                    <span class="cardAtendimentoTexto">
+                        <strong>Localização</strong>
+                        <small id="resumoEndereco">Veja como chegar</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <a class="cardAtendimento" id="instagramAtendimento" href="https://www.instagram.com/marianenailss__/" target="_blank" rel="noopener noreferrer">
+                    <span class="cardAtendimentoIcone"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+                    <span class="cardAtendimentoTexto">
+                        <strong>Instagram</strong>
+                        <small>Veja novidades e trabalhos</small>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="previaAtendimento" aria-labelledby="tituloPrevia">
+            <div class="tituloAtendimento tituloAtendimentoComLink">
+                <div>
+                    <span class="etiquetaSecao">Trabalhos recentes</span>
+                    <h2 id="tituloPrevia">Uma prévia da galeria</h2>
+                </div>
+                <a href="galeria.html" class="linkSecao">Ver galeria <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+
+            <div id="previaGaleriaAtendimento" class="gradePreviaAtendimento" aria-live="polite">
+                <p class="carregandoAtendimento">Carregando os trabalhos mais recentes...</p>
+            </div>
+
+            <a href="galeria.html" class="botaoGaleriaAtendimento">
+                <i class="fa-regular fa-images" aria-hidden="true"></i>
+                Abrir galeria completa
+            </a>
+        </section>
+    </main>
+
+    <footer class="rodapeSite">
+        <div>
+            <strong>Mariane Nails Studio</strong>
+            <span>Atendimento somente com horário marcado.</span>
+        </div>
+        <div class="rodapeLinks">
+            <a href="index.html">Início</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="atendimento.html">Atendimento</a>
+        </div>
+        <p>© 2026 Mariane Nails Studio</p>
+    </footer>
+
+    <div class="modalAtendimento" id="modalValores" role="dialog" aria-modal="true" aria-labelledby="tituloModalValores" hidden>
+        <div class="modalAtendimentoFundo" data-fechar-modal></div>
+        <div class="modalAtendimentoPainel" tabindex="-1">
+            <div class="modalAtendimentoPuxador" aria-hidden="true"></div>
+            <div class="modalAtendimentoTopo">
+                <div>
+                    <span class="modalAtendimentoEtiqueta">Serviços e preços</span>
+                    <h2 id="tituloModalValores">Tabela de valores</h2>
+                </div>
+                <button class="modalAtendimentoFechar" type="button" data-fechar-modal aria-label="Fechar tabela de valores"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+
+            <div class="modalListaValores">
+                <section class="modalGrupoValores">
+                    <h3><i class="fa-solid fa-gem" aria-hidden="true"></i> Esmaltação em gel</h3>
+                    <div><span>Mão</span><strong>R$ 40</strong></div>
+                    <div><span>Pé</span><strong>R$ 45</strong></div>
+                    <div class="modalValorDestaque"><span>Pé + mão</span><strong>R$ 80</strong></div>
+                </section>
+                <section class="modalGrupoValores">
+                    <h3><i class="fa-regular fa-heart" aria-hidden="true"></i> Esmaltação tradicional</h3>
+                    <div><span>Mão</span><strong>R$ 25</strong></div>
+                    <div><span>Pé</span><strong>R$ 30</strong></div>
+                    <div class="modalValorDestaque"><span>Pé + mão</span><strong>R$ 50</strong></div>
+                </section>
+            </div>
+
+            <a href="https://wa.me/5511970684683?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="modalBotaoPrincipal" id="whatsappValores" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Agendar pelo WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="modalAtendimento" id="modalLocalizacao" role="dialog" aria-modal="true" aria-labelledby="tituloModalLocalizacao" hidden>
+        <div class="modalAtendimentoFundo" data-fechar-modal></div>
+        <div class="modalAtendimentoPainel" tabindex="-1">
+            <div class="modalAtendimentoPuxador" aria-hidden="true"></div>
+            <div class="modalAtendimentoTopo">
+                <div>
+                    <span class="modalAtendimentoEtiqueta">Como chegar</span>
+                    <h2 id="tituloModalLocalizacao">Localização</h2>
+                </div>
+                <button class="modalAtendimentoFechar" type="button" data-fechar-modal aria-label="Fechar localização"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+
+            <div class="modalEndereco">
+                <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                <div>
+                    <small>Endereço do studio</small>
+                    <strong id="enderecoCompleto">Alameda das Rosas, 102</strong>
+                    <p>Atendimento somente com horário marcado.</p>
+                </div>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Alameda+das+Rosas+102+Carapicuiba" class="modalBotaoMapa" id="linkMapa" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Abrir no Google Maps</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="atendimento.js"></script>
+</body>
+
+</html>

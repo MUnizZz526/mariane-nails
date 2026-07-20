@@ -63,6 +63,18 @@ async function carregarPerfil() {
     document.getElementById("nomePerfil").textContent = data.nome;
     document.getElementById("descricaoPerfil").innerHTML = data.descricao;
     document.getElementById("fotoPerfil").src = data.foto;
+
+    const nomeMobile = document.getElementById("nomePerfilMobile");
+    const descricaoMobile = document.getElementById("descricaoPerfilMobile");
+    const fotoMobile = document.getElementById("fotoPerfilMobile");
+
+    if (nomeMobile) nomeMobile.textContent = data.nome || "Mariane Nails Studio";
+    if (descricaoMobile) {
+        descricaoMobile.textContent = String(data.descricao || "")
+            .replace(/<br\s*\/?>/gi, " ")
+            .replace(/<[^>]*>/g, "");
+    }
+    if (fotoMobile && data.foto) fotoMobile.src = data.foto;
 }
 
 // ===============================
@@ -111,7 +123,7 @@ async function carregarTrabalhosRecentes() {
         return;
     }
 
-    container.innerHTML = data.map((trabalho) => {
+    const trabalhosHtml = data.map((trabalho) => {
 
         const titulo = trabalho.titulo || "Trabalho";
 
@@ -142,6 +154,14 @@ async function carregarTrabalhosRecentes() {
         `;
 
     }).join("");
+
+    container.innerHTML = trabalhosHtml;
+
+    const containerMobile = document.getElementById("trabalhosRecentesMobile");
+
+    if (containerMobile) {
+        containerMobile.innerHTML = trabalhosHtml;
+    }
 
 }
 
@@ -195,7 +215,7 @@ async function carregarAntesDepoisRecentes() {
         return;
     }
 
-    container.innerHTML = data.map((item) => {
+    const comparativosHtml = data.map((item) => {
 
         const titulo = item.titulo || "Antes e Depois";
 
@@ -238,6 +258,14 @@ async function carregarAntesDepoisRecentes() {
         `;
 
     }).join("");
+
+    container.innerHTML = comparativosHtml;
+
+    const containerMobile = document.getElementById("antesDepoisMobile");
+
+    if (containerMobile) {
+        containerMobile.innerHTML = comparativosHtml;
+    }
 
 }
 

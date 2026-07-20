@@ -19,6 +19,10 @@
     max-width: 680px;
 }
 
+.voltarCentralMobile {
+    display: none;
+}
+
 .heroEtiqueta {
     display: inline-block;
     margin-bottom: 18px;
