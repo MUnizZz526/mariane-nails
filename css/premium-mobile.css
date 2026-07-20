@@ -27,6 +27,17 @@
             #fcf8fb;
     }
 
+    /* Evita que o Safari posicione a navegação em relação ao cabeçalho. */
+    .paginaAtendimentoPremium .site-header,
+    .paginaGaleriaMobile .site-header,
+    .paginaSiteCompleto .site-header {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        filter: none;
+        transform: none;
+        contain: none;
+    }
+
     /* Navegação inferior */
 
     .paginaLinktree .site-nav,
@@ -98,6 +109,11 @@
         padding: calc(18px + env(safe-area-inset-top)) 20px 0;
         border: 0;
         background: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        filter: none;
+        transform: none;
+        contain: none;
         box-shadow: none;
     }
 
