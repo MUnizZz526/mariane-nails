@@ -33,11 +33,19 @@
     .paginaAtendimentoPremium .site-nav,
     .paginaGaleriaMobile .site-nav,
     .paginaSiteCompleto .site-nav {
+        position: fixed;
+        top: auto;
         right: 14px;
         bottom: calc(12px + env(safe-area-inset-bottom));
         left: 14px;
+        z-index: 3000;
+        width: auto;
+        height: auto;
+        min-height: 68px;
         gap: 2px;
-        padding: 6px;
+        padding: 8px 6px 6px;
+        overflow: visible;
+        box-sizing: border-box;
         border: 1px solid rgba(255, 255, 255, 0.16);
         border-radius: 23px;
         background: rgba(53, 17, 38, 0.94);
@@ -48,8 +56,30 @@
     .paginaAtendimentoPremium .site-nav a,
     .paginaGaleriaMobile .site-nav a,
     .paginaSiteCompleto .site-nav a {
+        position: relative;
         min-height: 54px;
+        padding: 7px 4px 5px;
+        overflow: visible;
+        line-height: 1.2;
         color: rgba(255, 255, 255, 0.62);
+    }
+
+    .paginaLinktree .site-nav a i,
+    .paginaAtendimentoPremium .site-nav a i,
+    .paginaGaleriaMobile .site-nav a i,
+    .paginaSiteCompleto .site-nav a i {
+        flex: 0 0 auto;
+        line-height: 1;
+    }
+
+    .paginaLinktree .site-nav a span,
+    .paginaAtendimentoPremium .site-nav a span,
+    .paginaGaleriaMobile .site-nav a span,
+    .paginaSiteCompleto .site-nav a span {
+        display: block;
+        overflow: visible;
+        white-space: nowrap;
+        line-height: 1.25;
     }
 
     .paginaLinktree .site-nav a.ativo,
