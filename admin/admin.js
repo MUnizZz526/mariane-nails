@@ -80,6 +80,12 @@ async function carregarPerfil() {
         document.getElementById("previewFoto").src = data.foto;
     }
 
+    const guiaNome = document.getElementById("guiaNomePerfil");
+    const guiaFoto = document.getElementById("guiaFotoPerfil");
+
+    if (guiaNome) guiaNome.textContent = data.nome || "Mariane Nails";
+    if (guiaFoto && data.foto) guiaFoto.src = data.foto;
+
     const whatsapp = document.getElementById("whatsapp");
     const instagram = document.getElementById("instagram");
     const endereco = document.getElementById("endereco");
@@ -116,6 +122,9 @@ async function salvarPerfil() {
         alert("Erro ao salvar perfil: " + error.message);
         return;
     }
+
+    const guiaNome = document.getElementById("guiaNomePerfil");
+    if (guiaNome) guiaNome.textContent = nome || "Mariane Nails";
 
     alert("Perfil atualizado!");
 }
@@ -252,6 +261,8 @@ async function salvarFoto() {
         }
 
         document.getElementById("previewFoto").src = imagem.url;
+        const guiaFoto = document.getElementById("guiaFotoPerfil");
+        if (guiaFoto) guiaFoto.src = imagem.url;
         inputFoto.value = "";
         limparArquivoRecortado("foto");
 
@@ -535,6 +546,8 @@ async function carregarGaleria() {
         return;
     }
 
+    atualizarGuiaGaleria(data || []);
+
     if (!data || data.length === 0) {
         lista.innerHTML =
             "<p>Nenhuma foto cadastrada.</p>";
@@ -554,6 +567,22 @@ async function carregarGaleria() {
                 );
             });
         });
+}
+
+function atualizarGuiaGaleria(itens = []) {
+    const guia = document.getElementById("guiaGaleriaImagens");
+    if (!guia) return;
+
+    const imagens = itens
+        .flatMap((item) => [item.imagem, item.imagem_depois])
+        .filter(Boolean)
+        .slice(0, 2);
+
+    if (imagens.length === 0) return;
+
+    guia.innerHTML = imagens
+        .map((url) => `<span><img src="${escaparHtml(url)}" alt=""></span>`)
+        .join("");
 }
 
 
