@@ -164,6 +164,36 @@
     color: #c5a8b6;
 }
 
+.gradeAtendimento > :nth-child(1) {
+    border-color: #edc8dc;
+    background: linear-gradient(145deg, #ffffff, #ffeaf5);
+}
+
+.gradeAtendimento > :nth-child(1) .cardAtendimentoIcone {
+    background: #fbd8eb;
+    color: #c62e7b;
+}
+
+.gradeAtendimento > :nth-child(2) {
+    border-color: #d9c8ee;
+    background: linear-gradient(145deg, #ffffff, #f2eaff);
+}
+
+.gradeAtendimento > :nth-child(2) .cardAtendimentoIcone {
+    background: #e7daf9;
+    color: #7440b2;
+}
+
+.gradeAtendimento > :nth-child(3) {
+    border-color: #e8cae6;
+    background: linear-gradient(145deg, #ffffff, #f8eafa);
+}
+
+.gradeAtendimento > :nth-child(3) .cardAtendimentoIcone {
+    background: linear-gradient(135deg, #833ab4, #e1306c, #f77737);
+    color: #fff;
+}
+
 .tituloAtendimentoComLink {
     display: flex;
     align-items: flex-end;
@@ -182,9 +212,10 @@
     aspect-ratio: 1 / 1;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.94);
+    border-radius: 20px;
     background: var(--surface);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 12px 28px rgba(80, 43, 62, 0.1);
 }
 
 .fotoPreviaAtendimento img {
@@ -739,29 +770,29 @@
 }
 
 .linksLinktree > :nth-child(3) {
-    background: linear-gradient(135deg, #ffffff, #fff7e8);
+    background: linear-gradient(135deg, #ffffff, #fff0f8);
 }
 
 .linksLinktree > :nth-child(3)::before {
-    background: #e5a028;
+    background: #d94492;
 }
 
 .linksLinktree > :nth-child(3) .linkLinktreeIcone {
-    background: #fff1ce;
-    color: #bc7610;
+    background: #fbd9eb;
+    color: #c72f7d;
 }
 
 .linksLinktree > :nth-child(4) {
-    background: linear-gradient(135deg, #ffffff, #fff0f3);
+    background: linear-gradient(135deg, #ffffff, #f5efff);
 }
 
 .linksLinktree > :nth-child(4)::before {
-    background: #e95572;
+    background: #8751c7;
 }
 
 .linksLinktree > :nth-child(4) .linkLinktreeIcone {
-    background: #ffe2e8;
-    color: #ce3654;
+    background: #e9dcfb;
+    color: #7440b2;
 }
 
 .linksLinktree > :nth-child(5) {

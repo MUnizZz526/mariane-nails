@@ -799,23 +799,23 @@
     }
 
     .mobileAcoesGrade > :nth-child(1) {
-        border-color: #f2d9a9;
-        background: linear-gradient(145deg, #fffdf8, #fff6df);
+        border-color: #efc9dd;
+        background: linear-gradient(145deg, #fffafd, #ffeaf5);
     }
 
     .mobileAcoesGrade > :nth-child(1) i {
-        background: #ffefc8;
-        color: #b8750e;
+        background: #fbd8eb;
+        color: #c62e7b;
     }
 
     .mobileAcoesGrade > :nth-child(2) {
-        border-color: #f3ced7;
-        background: linear-gradient(145deg, #fffafb, #ffedf1);
+        border-color: #dac9f0;
+        background: linear-gradient(145deg, #fcfaff, #f2eaff);
     }
 
     .mobileAcoesGrade > :nth-child(2) i {
-        background: #ffe0e7;
-        color: #cf3d5c;
+        background: #e7daf9;
+        color: #7440b2;
     }
 
     .mobileAcoesGrade > :nth-child(3) {
