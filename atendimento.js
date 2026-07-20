@@ -125,6 +125,8 @@ async function carregarPreviaGaleriaAtendimento() {
             </a>
         `;
     }).join("");
+
+    window.dispatchEvent(new Event("interfaceAtualizada"));
 }
 
 function abrirModalAtendimento(id) {

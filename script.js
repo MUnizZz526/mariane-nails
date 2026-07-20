@@ -163,6 +163,8 @@ async function carregarTrabalhosRecentes() {
         containerMobile.innerHTML = trabalhosHtml;
     }
 
+    window.dispatchEvent(new Event("interfaceAtualizada"));
+
 }
 
 // ===============================
@@ -266,6 +268,8 @@ async function carregarAntesDepoisRecentes() {
     if (containerMobile) {
         containerMobile.innerHTML = comparativosHtml;
     }
+
+    window.dispatchEvent(new Event("interfaceAtualizada"));
 
 }
 

@@ -55,6 +55,7 @@ async function carregarGaleria() {
     );
 
     prepararImagensLightbox();
+    window.dispatchEvent(new Event("interfaceAtualizada"));
 }
 
 
@@ -197,6 +198,8 @@ function configurarAbas() {
         secaoAntesDepois.classList.add(
             "escondido-galeria"
         );
+
+        animarEntradaSecao(secaoTrabalhos);
     });
 
     abaAntesDepois.addEventListener("click", () => {
@@ -210,7 +213,15 @@ function configurarAbas() {
         secaoTrabalhos.classList.add(
             "escondido-galeria"
         );
+
+        animarEntradaSecao(secaoAntesDepois);
     });
+}
+
+function animarEntradaSecao(secao) {
+    secao.classList.remove("secaoGaleriaEntrando");
+    void secao.offsetWidth;
+    secao.classList.add("secaoGaleriaEntrando");
 }
 
 
@@ -219,23 +230,28 @@ function configurarAbas() {
 // =========================================
 
 function prepararImagensLightbox() {
-    imagensLightbox = Array.from(
-        document.querySelectorAll(".imagem-galeria")
+    configurarGrupoLightbox("#secaoTrabalhos .imagem-galeria");
+    configurarGrupoLightbox("#secaoAntesDepois .imagem-galeria");
+}
+
+function configurarGrupoLightbox(seletor) {
+    const grupo = Array.from(
+        document.querySelectorAll(seletor)
     );
 
-    imagensLightbox.forEach((imagem, indice) => {
+    grupo.forEach((imagem, indice) => {
         imagem.addEventListener("click", () => {
+            imagensLightbox = grupo;
             abrirLightbox(indice);
         });
     });
-
-    atualizarVisibilidadeSetas();
 }
 
 function abrirLightbox(indice) {
     indiceAtual = indice;
 
     atualizarLightbox();
+    atualizarVisibilidadeSetas();
 
     document
         .getElementById("lightbox")

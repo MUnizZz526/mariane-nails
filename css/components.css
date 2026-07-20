@@ -173,3 +173,53 @@
     box-shadow:var(--shadow);
 
 }
+
+/* =========================================
+   MOVIMENTO E MICROINTERAÇÕES
+========================================= */
+
+.revelarInterface {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    transition:
+        opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--atraso-revelar, 0ms);
+}
+
+.revelarInterface.reveladoInterface {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.linkLinktree,
+.cardAtendimento,
+.mobileAcaoCard,
+.aba-galeria,
+.botaoGaleriaAtendimento,
+.mobileWhatsappPrincipal {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.linkLinktree:active,
+.cardAtendimento:active,
+.botaoGaleriaAtendimento:active,
+.mobileWhatsappPrincipal:active {
+    transform: scale(0.975);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .revelarInterface {
+        opacity: 1;
+        transform: none;
+    }
+}
